@@ -6,7 +6,7 @@ O componente Button suporta diferentes estados e visuais baseados em props como 
 
 ## Demonstração
 
-A disponibilidade de uma página de demonstração depende do setup do ambiente de desenvolvimento. Assim que estiver pronto, a aplicação deve ser acessível via um URL específico fornecido após a configuração do hosting.
+Há também uma versão de demonstração disponível via [Cloudflare Pages](https://react-button.pages.dev/) integrada via deploy continuo.
 
 ## Requisitos
 
