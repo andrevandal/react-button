@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import Button from './components/Button.tsx';
 
 function App() {

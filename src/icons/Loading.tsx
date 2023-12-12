@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import './Loading.css';
 
 const Loading = (props?: Record<string, any>) => (

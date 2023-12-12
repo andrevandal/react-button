@@ -1,4 +1,3 @@
-import * as React from 'react';
 import './Button.css';
 
 import ArrowRightIcon from '../icons/ArrowRight.tsx';
