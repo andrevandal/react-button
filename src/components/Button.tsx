@@ -17,27 +17,44 @@ type IconProps = {
 
 const Icon = ({ icon }: IconProps) => {
   const Icon = Icons[icon];
-  return <Icon className='icon' />;
+  return <Icon className="icon" />;
 };
 
-const LoadingAnimation = () => <LoadingIcon className='loading' style={
-  {
-    width: '2.063rem',
-    height: '0.375rem'
-  }
-} />;
+const LoadingAnimation = () => (
+  <LoadingIcon
+    className="loading"
+    style={{
+      width: '2.063rem',
+      height: '0.375rem',
+    }}
+  />
+);
 
-type Props = {
+type BaseProps = {
   color?: 'primary' | 'secondary';
-  icon?: keyof typeof Icons;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   loading?: boolean;
+};
+
+type ButtonWithIconProps = BaseProps & {
+  icon: keyof typeof Icons;
+  children: React.ReactNode;
+};
+
+type ButtonWithoutIconProps = BaseProps & {
+  icon?: never;
   children?: React.ReactNode;
 };
 
+type Props = ButtonWithIconProps | ButtonWithoutIconProps;
+
 const Button = ({ color = 'primary', icon, onClick, disabled = false, children, loading = false }: Props) => {
   const isDisabled = loading || disabled;
+
+  if (icon && !children) {
+    throw Error('Prop `children` must be provided if `icon` is set.');
+  }
 
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!disabled && !loading && onClick) {

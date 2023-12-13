@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React from 'react';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
@@ -59,5 +60,13 @@ describe('Button component', () => {
     expect(buttonElement).toHaveClass('loading');
     expect(buttonElement).toBeDisabled();
     expect(loadingAnimation).toBeInTheDocument();
+  });
+
+  it('throws error when icon and children is not defined', () => {
+    const props = {
+      icon: 'check',
+      children: undefined,
+    };
+    expect(() => render(<Button {...props as any}></Button>)).toThrowError();
   });
 });
