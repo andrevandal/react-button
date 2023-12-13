@@ -8,22 +8,29 @@ O componente Button suporta diferentes estados e visuais baseados em props como 
 
 Há também uma versão de demonstração disponível via [Cloudflare Pages](https://react-button.pages.dev/) integrada via deploy continuo.
 
-## Requisitos
+## Stack
 
 - Node.js (v20+)
 - npm (versão correspondente)
+- Vite
+- Vitest
+- React
+- PostCSS
+  - postcss-import
+  - postcss-preset-env (w/ "nesting-rules": false)
+  - postcss-nested (SAAS-like nesting)
 
 ## Instalação
 
 Clone o repositório para a sua máquina local:
 
-```
+```sh
 git clone https://github.com/andrevandal/react-button.git
 ```
 
 Instale as dependências:
 
-```
+```sh
 npm install
 ```
 
@@ -31,7 +38,7 @@ npm install
 
 Para iniciar o ambiente de desenvolvimento, execute o seguinte comando:
 
-```
+```sh
 npm run dev
 ```
 
@@ -41,7 +48,7 @@ O projeto estará disponível em `http://localhost:5173/`.
 
 Para executar os testes automatizados, utilize o comando:
 
-```
+```sh
 npm run test
 ```
 
